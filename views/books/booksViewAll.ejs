@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Books</title>
+    </head>
+    <body>
+        <h1>Books</h1>
+        <a href="/book/add">Add New Book</a> <br />
+
+        <br />
+
+        <table border="1">
+            <tr><th>Title</th><th>Dewey</th><th>Author</th><th>Action</th></tr>
+            <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/books/?book_id=<%= result[i].book_id %>"><%= result[i].title %></a></td>
+                <td><%= result[i].dewey_num %></td>
+                <td><%= result[i].author_last%>, <%= result[i].author_first%></td>
+                <td><form action="/books/delete/">
+                        <input type="hidden" name="book_id" id="book_id" value="<%= result[i].book_id %>" />
+                        <input type="submit" value="Delete"/>
+                    </form>
+                    <form action="/books/change/">
+                        <input type="hidden" name="book_id" id="book_id" value="<%= result[i].book_id %>" />
+                        <input type="submit" value="Check Out"/>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+
+</html>

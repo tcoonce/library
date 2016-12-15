@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Movies</title>
+    </head>
+    <body>
+        <h1>Movies</h1>
+        <a href="/movie/add">Add New Movie</a> <br />
+
+        <br />
+
+        <table border="1">
+            <tr><th>Title</th><th>Dewey</th><th>Author</th><th>Action</th></tr>
+            <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/movie/?movie_id=<%= result[i].movie_id %>"><%= result[i].title %></a></td>
+                <td><%= result[i].dewey_num %></td>
+                <td><%= result[i].star_last%>, <%= result[i].star_first%></td>
+                <td><form action="/movie/delete/">
+                        <input type="hidden" name="movie_id" id="movie_id" value="<%= result[i].movie_id %>" />
+                        <input type="submit" value="Delete"/>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+
+</html>

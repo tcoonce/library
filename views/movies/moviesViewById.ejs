@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Movies - <%= result[0].movie_name %></title>
+</head>
+<body>
+<h1>Movies</h1>
+<ul>
+    <li>Movie ID: <%= result[0].movie_id%></li>
+    <li>Movie Title: <%= result[0].title %></li>
+    <li>Staring: <%= result[0].star_last%>, <%= result[0].star_first %></li>
+    <li>Movie Genre: <%= result[0].genre %></li>
+    <li>Movie Location <%= result[0].lib_name %></li>
+    <li>Checked Out?: <%= result[0].checked_out %></li>
+</ul>
+</body>
+
+</html>

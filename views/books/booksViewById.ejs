@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Books - <%= result[0].title %></title>
+</head>
+<body>
+<h1>Books</h1>
+<ul>
+    <li>Book ID: <%= result[0].book_id%></li>
+    <li>Book Title: <%= result[0].title %></li>
+    <li>Book Author: <%= result[0].author_last %>, <%= result[0].author_first %></li>
+    <li>Book Genre: <%= result[0].genre %></li>
+    <li>Location: <%= result[0].name%></li>
+    <li>Checked Out?: <%= result[0].checked_out %></li>
+</ul>
+</body>
+
+</html>

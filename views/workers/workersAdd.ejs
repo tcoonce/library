@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Add New Worker</title>
+</head>
+<body>
+    <h1>Add New Worker</h1>
+    <form action="/worker/insert" method="get">
+        First Name: <input id="first_name" name="first_name" type="text" />
+        Last Name: <input id="last_name" name="last_name" type="text" />
+        Email: <input id="email" name="email" type="test" />
+        <br />
+        <br />
+
+        Library
+        <br />
+        <select id="lib_id" name="lib_id" multiple="multiple">
+            <% for(var i=0; library.length > i; i++ ) { %>
+            <option value="<%= library[i].lib_id %>"><%= library[i].lib_name %></option>
+            <% }%>
+        </select>
+
+        <input type="submit" />
+
+    </form>
+    <%- include("../includes/footer.ejs"); %>
+</body>
+
+</html>

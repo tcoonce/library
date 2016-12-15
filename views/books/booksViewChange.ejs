@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Check Out Book</title>
+</head>
+<body>
+    <h1>Select Member Name</h1>
+    <form action="/book/edit" method="get">
+        Member ID
+        <br />
+        <select id="member_id" name="member_id" multiple="multiple">
+            <% for(var i=0; address.length > i; i++ ) { %>
+            <option value="<%= members[i].member_id %>"><%= members[i].last_name + ', ' + members[i].first_name %></option>
+            <% } %>
+        </select>
+
+        <!-- Initialize the multiselect plugin: -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#member_id').multiselect();
+            });
+        </script>
+        <br />
+
+        <input type="submit" />
+
+    </form>
+    <%- include("../includes/footer.ejs"); %>
+</body>
+
+</html>

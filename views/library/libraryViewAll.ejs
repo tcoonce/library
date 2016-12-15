@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Libraries</title>
+    </head>
+    <body>
+        <h1>Libraries</h1>
+        <a href="/library/add">Add New Library</a> <br />
+
+        <br />
+
+        <table border="1">
+            <tr><th>Name</th><th>Action</th></tr>
+            <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/library/?library_id=<%= result[i].library_id %>"><%= result[i].lib_name %></a></td>
+                <td><form action="/library/delete/">
+                        <input type="hidden" name="library_id" id="library_id" value="<%= result[i].library_id %>" />
+                        <input type="submit" value="Delete"/>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+
+</html>
